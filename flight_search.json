@@ -1,0 +1,1891 @@
+{
+    "meta": {
+      "count": 10,
+      "links": {
+        "self": "https://test.api.amadeus.com/v2/shopping/flight-offers?currencyCode=USD&originLocationCode=AUS&destinationLocationCode=SFO&departureDate=2021-05-01&returnDate=2021-05-10&adults=1&max=10"
+      }
+    },
+    "data": [
+      {
+        "type": "flight-offer",
+        "id": "1",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "lastTicketingDate": "2021-03-27",
+        "numberOfBookableSeats": 1,
+        "itineraries": [
+          {
+            "duration": "PT4H55M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-01T16:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3476",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "1",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:30:00"
+                },
+                "arrival": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-01T18:55:00"
+                },
+                "carrierCode": "AS",
+                "number": "1443",
+                "aircraft": {
+                  "code": "73H"
+                },
+                "operating": {
+                  "carrierCode": "AS"
+                },
+                "duration": "PT1H25M",
+                "id": "2",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          },
+          {
+            "duration": "PT6H",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-10T07:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T08:38:00"
+                },
+                "carrierCode": "AS",
+                "number": "3320",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H38M",
+                "id": "5",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T10:00:00"
+                },
+                "arrival": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-10T15:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3495",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "6",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "USD",
+          "total": "186.41",
+          "base": "130.24",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            }
+          ],
+          "grandTotal": "186.41"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": [
+          "AS"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "USD",
+              "total": "186.41",
+              "base": "130.24"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "1",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "2",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "5",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "6",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flight-offer",
+        "id": "2",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "lastTicketingDate": "2021-03-27",
+        "numberOfBookableSeats": 1,
+        "itineraries": [
+          {
+            "duration": "PT4H55M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-01T16:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3476",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "1",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:30:00"
+                },
+                "arrival": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-01T18:55:00"
+                },
+                "carrierCode": "AS",
+                "number": "1443",
+                "aircraft": {
+                  "code": "73H"
+                },
+                "operating": {
+                  "carrierCode": "AS"
+                },
+                "duration": "PT1H25M",
+                "id": "2",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          },
+          {
+            "duration": "PT7H",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-10T06:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T07:39:00"
+                },
+                "carrierCode": "AS",
+                "number": "3318",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H39M",
+                "id": "7",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T10:00:00"
+                },
+                "arrival": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-10T15:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3495",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "8",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "USD",
+          "total": "186.41",
+          "base": "130.24",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            }
+          ],
+          "grandTotal": "186.41"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": [
+          "AS"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "USD",
+              "total": "186.41",
+              "base": "130.24"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "1",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "2",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "7",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "8",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flight-offer",
+        "id": "3",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "lastTicketingDate": "2021-03-27",
+        "numberOfBookableSeats": 1,
+        "itineraries": [
+          {
+            "duration": "PT4H55M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-01T16:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3476",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "1",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:30:00"
+                },
+                "arrival": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-01T18:55:00"
+                },
+                "carrierCode": "AS",
+                "number": "1443",
+                "aircraft": {
+                  "code": "73H"
+                },
+                "operating": {
+                  "carrierCode": "AS"
+                },
+                "duration": "PT1H25M",
+                "id": "2",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          },
+          {
+            "duration": "PT17H",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-10T20:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T21:35:00"
+                },
+                "carrierCode": "AS",
+                "number": "3440",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H35M",
+                "id": "9",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-11T10:00:00"
+                },
+                "arrival": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-11T15:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3495",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "10",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "USD",
+          "total": "186.41",
+          "base": "130.24",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            }
+          ],
+          "grandTotal": "186.41"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": [
+          "AS"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "USD",
+              "total": "186.41",
+              "base": "130.24"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "1",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "2",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "9",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "10",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flight-offer",
+        "id": "4",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "lastTicketingDate": "2021-03-27",
+        "numberOfBookableSeats": 1,
+        "itineraries": [
+          {
+            "duration": "PT4H55M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-01T16:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3476",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "1",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:30:00"
+                },
+                "arrival": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-01T18:55:00"
+                },
+                "carrierCode": "AS",
+                "number": "1443",
+                "aircraft": {
+                  "code": "73H"
+                },
+                "operating": {
+                  "carrierCode": "AS"
+                },
+                "duration": "PT1H25M",
+                "id": "2",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          },
+          {
+            "duration": "PT18H",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-10T19:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T20:33:00"
+                },
+                "carrierCode": "AS",
+                "number": "1238",
+                "aircraft": {
+                  "code": "320"
+                },
+                "operating": {
+                  "carrierCode": "AS"
+                },
+                "duration": "PT1H33M",
+                "id": "11",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-11T10:00:00"
+                },
+                "arrival": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-11T15:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3495",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "12",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "USD",
+          "total": "186.41",
+          "base": "130.24",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            }
+          ],
+          "grandTotal": "186.41"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": [
+          "AS"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "USD",
+              "total": "186.41",
+              "base": "130.24"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "1",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "2",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "11",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "12",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flight-offer",
+        "id": "5",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "lastTicketingDate": "2021-03-27",
+        "numberOfBookableSeats": 1,
+        "itineraries": [
+          {
+            "duration": "PT4H55M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-01T16:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3476",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "1",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:30:00"
+                },
+                "arrival": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-01T18:55:00"
+                },
+                "carrierCode": "AS",
+                "number": "1443",
+                "aircraft": {
+                  "code": "73H"
+                },
+                "operating": {
+                  "carrierCode": "AS"
+                },
+                "duration": "PT1H25M",
+                "id": "2",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          },
+          {
+            "duration": "PT19H20M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-10T17:40:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T19:15:00"
+                },
+                "carrierCode": "AS",
+                "number": "3486",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H35M",
+                "id": "13",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-11T10:00:00"
+                },
+                "arrival": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-11T15:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3495",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "14",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "USD",
+          "total": "186.41",
+          "base": "130.24",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            }
+          ],
+          "grandTotal": "186.41"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": [
+          "AS"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "USD",
+              "total": "186.41",
+              "base": "130.24"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "1",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "2",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "13",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "14",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flight-offer",
+        "id": "6",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "lastTicketingDate": "2021-03-27",
+        "numberOfBookableSeats": 1,
+        "itineraries": [
+          {
+            "duration": "PT4H55M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-01T16:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3476",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "1",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:30:00"
+                },
+                "arrival": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-01T18:55:00"
+                },
+                "carrierCode": "AS",
+                "number": "1443",
+                "aircraft": {
+                  "code": "73H"
+                },
+                "operating": {
+                  "carrierCode": "AS"
+                },
+                "duration": "PT1H25M",
+                "id": "2",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          },
+          {
+            "duration": "PT20H50M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-10T16:10:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T17:45:00"
+                },
+                "carrierCode": "AS",
+                "number": "3434",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H35M",
+                "id": "15",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-11T10:00:00"
+                },
+                "arrival": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-11T15:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3495",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "16",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "USD",
+          "total": "186.41",
+          "base": "130.24",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            }
+          ],
+          "grandTotal": "186.41"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": [
+          "AS"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "USD",
+              "total": "186.41",
+              "base": "130.24"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "1",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "2",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "15",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "16",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flight-offer",
+        "id": "7",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "lastTicketingDate": "2021-03-27",
+        "numberOfBookableSeats": 1,
+        "itineraries": [
+          {
+            "duration": "PT5H55M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-01T16:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3476",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "3",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T18:30:00"
+                },
+                "arrival": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-01T19:55:00"
+                },
+                "carrierCode": "AS",
+                "number": "3325",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H25M",
+                "id": "4",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          },
+          {
+            "duration": "PT6H",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-10T07:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T08:38:00"
+                },
+                "carrierCode": "AS",
+                "number": "3320",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H38M",
+                "id": "5",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T10:00:00"
+                },
+                "arrival": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-10T15:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3495",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "6",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "USD",
+          "total": "186.41",
+          "base": "130.24",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            }
+          ],
+          "grandTotal": "186.41"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": [
+          "AS"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "USD",
+              "total": "186.41",
+              "base": "130.24"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "3",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "4",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "5",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "6",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flight-offer",
+        "id": "8",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "lastTicketingDate": "2021-03-27",
+        "numberOfBookableSeats": 1,
+        "itineraries": [
+          {
+            "duration": "PT5H55M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-01T16:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3476",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "3",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T18:30:00"
+                },
+                "arrival": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-01T19:55:00"
+                },
+                "carrierCode": "AS",
+                "number": "3325",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H25M",
+                "id": "4",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          },
+          {
+            "duration": "PT7H",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-10T06:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T07:39:00"
+                },
+                "carrierCode": "AS",
+                "number": "3318",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H39M",
+                "id": "7",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T10:00:00"
+                },
+                "arrival": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-10T15:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3495",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "8",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "USD",
+          "total": "186.41",
+          "base": "130.24",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            }
+          ],
+          "grandTotal": "186.41"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": [
+          "AS"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "USD",
+              "total": "186.41",
+              "base": "130.24"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "3",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "4",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "7",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "8",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flight-offer",
+        "id": "9",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "lastTicketingDate": "2021-03-27",
+        "numberOfBookableSeats": 1,
+        "itineraries": [
+          {
+            "duration": "PT5H55M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-01T16:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3476",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "3",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T18:30:00"
+                },
+                "arrival": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-01T19:55:00"
+                },
+                "carrierCode": "AS",
+                "number": "3325",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H25M",
+                "id": "4",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          },
+          {
+            "duration": "PT17H",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-10T20:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T21:35:00"
+                },
+                "carrierCode": "AS",
+                "number": "3440",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H35M",
+                "id": "9",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-11T10:00:00"
+                },
+                "arrival": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-11T15:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3495",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "10",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "USD",
+          "total": "186.41",
+          "base": "130.24",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            }
+          ],
+          "grandTotal": "186.41"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": [
+          "AS"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "USD",
+              "total": "186.41",
+              "base": "130.24"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "3",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "4",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "9",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "10",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flight-offer",
+        "id": "10",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "lastTicketingDate": "2021-03-27",
+        "numberOfBookableSeats": 1,
+        "itineraries": [
+          {
+            "duration": "PT5H55M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-01T16:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T17:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3476",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "3",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-01T18:30:00"
+                },
+                "arrival": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-01T19:55:00"
+                },
+                "carrierCode": "AS",
+                "number": "3325",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT1H25M",
+                "id": "4",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          },
+          {
+            "duration": "PT18H",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "SFO",
+                  "terminal": "2",
+                  "at": "2021-05-10T19:00:00"
+                },
+                "arrival": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-10T20:33:00"
+                },
+                "carrierCode": "AS",
+                "number": "1238",
+                "aircraft": {
+                  "code": "320"
+                },
+                "operating": {
+                  "carrierCode": "AS"
+                },
+                "duration": "PT1H33M",
+                "id": "11",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "LAX",
+                  "terminal": "6",
+                  "at": "2021-05-11T10:00:00"
+                },
+                "arrival": {
+                  "iataCode": "AUS",
+                  "at": "2021-05-11T15:00:00"
+                },
+                "carrierCode": "AS",
+                "number": "3495",
+                "aircraft": {
+                  "code": "E75"
+                },
+                "duration": "PT3H",
+                "id": "12",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "USD",
+          "total": "186.41",
+          "base": "130.24",
+          "fees": [
+            {
+              "amount": "0.00",
+              "type": "SUPPLIER"
+            },
+            {
+              "amount": "0.00",
+              "type": "TICKETING"
+            }
+          ],
+          "grandTotal": "186.41"
+        },
+        "pricingOptions": {
+          "fareType": [
+            "PUBLISHED"
+          ],
+          "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": [
+          "AS"
+        ],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "USD",
+              "total": "186.41",
+              "base": "130.24"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "3",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "4",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "11",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH2OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              },
+              {
+                "segmentId": "12",
+                "cabin": "ECONOMY",
+                "fareBasis": "GH3OAVBN",
+                "brandedFare": "SV",
+                "class": "X",
+                "includedCheckedBags": {
+                  "quantity": 0
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "dictionaries": {
+      "locations": {
+        "LAX": {
+          "cityCode": "LAX",
+          "countryCode": "US"
+        },
+        "SFO": {
+          "cityCode": "SFO",
+          "countryCode": "US"
+        },
+        "AUS": {
+          "cityCode": "AUS",
+          "countryCode": "US"
+        }
+      },
+      "aircraft": {
+        "320": "AIRBUS A320",
+        "E75": "EMBRAER 175",
+        "73H": "BOEING 737-800 (WINGLETS)"
+      },
+      "currencies": {
+        "USD": "US DOLLAR"
+      },
+      "carriers": {
+        "AS": "ALASKA AIRLINES"
+      }
+    }
+  }
