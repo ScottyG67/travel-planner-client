@@ -19,7 +19,7 @@ export default class Flights extends React.Component {
         return (
             <div>
                 <h1>Flights</h1>
-                {this.state.flights.map(flight => <Flight flight={flight}/>)}
+                {this.state.flights.map(flight => <Flight key={flight.id} flight={flight}/>)}
             </div>
         )
     }
