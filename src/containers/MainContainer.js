@@ -11,7 +11,7 @@ export default class MainContainer extends React.Component {
     }
 
 passSearch = (dateStart,dateEnd,locStart,locEnd) => {
-    console.log("hi")
+    // console.log("hi")
     this.setState({searchRequest:[dateStart,dateEnd,locStart,locEnd]})
     this.setState({renderFlights:true})
 }
