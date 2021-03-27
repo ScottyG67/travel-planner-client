@@ -1,4 +1,5 @@
 import React from 'react'
+import { List } from 'semantic-ui-react'
 
 const Flight = ({flight}) => {
 
@@ -17,27 +18,25 @@ const Flight = ({flight}) => {
 
     return (
         <div className="ui column">
-            <div className="ui card">
+            <div className="ui_card">
                 <div className="content">
                     <div className="header">
-                        <h3>Flight info</h3>
+                        <h3></h3>
+                        <h3>${flight.price.grandTotal}</h3>
                     </div>
-                    <div className="meta text-wrap">
-                        <p>${flight.price.grandTotal}</p>
+                    <div className="extra content">
                         <p>Outbound</p>
-                        <ul>
-                            <li>{outDate}</li>
-                            <li>{outDepart.iataCode} to {outArrive.iataCode}</li>
-                            <li>Take off: {outDepartTime}</li>
-                            <li>Land: {outArriveTime}</li>
-                        </ul>
+                        <List>
+                            <List.Item>{outDate}</List.Item>
+                            <List.Item>Take off: {outDepartTime}</List.Item>
+                            <List.Item>Land: {outArriveTime}</List.Item>
+                        </List>
                         <p>Return</p>
-                        <ul>
-                            <li>{returnDate}</li>
-                            <li>{returnDepart.iataCode} to {returnArrive.iataCode}</li>
-                            <li>Take off: {returnDepartTime}</li>
-                            <li>Land: {returnArriveTime}</li>
-                        </ul>
+                        <List>
+                            <List.Item>{returnDate}</List.Item>
+                            <List.Item>Take off: {returnDepartTime}</List.Item>
+                            <List.Item>Land: {returnArriveTime}</List.Item>
+                        </List>
                     </div>
                 </div>
             </div>

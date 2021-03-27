@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import DatePicker from 'react-date-picker'
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Checkbox } from 'semantic-ui-react'
 
 
 const SearchForm = (props) => {
@@ -8,11 +8,12 @@ const SearchForm = (props) => {
     const [returnDate, setReturnDate] = useState(new Date())
     const [departLoc, setDepartLoc] = useState("")
     const [arriveLoc, setArriveLoc] = useState("")
+    const [searchFlights,setSearchFlights] = useState(true)
+    const [searchAccommodations,setSearchAccommodations] = useState(true)
     
     const handleSubmit = (e) => {
         e.preventDefault();
-
-
+        props.passSearch(departDate,returnDate,departLoc,arriveLoc)
 
     }
     
@@ -39,6 +40,7 @@ const SearchForm = (props) => {
                         value={arriveLoc}
                     />
                 </Form.Field>
+                <Form.Field label='People' control='input' type='number' min={1} />
                 {/* <Form.Field> */}
                     <label>When Do you want to go?</label>
                     <DatePicker 
@@ -55,6 +57,12 @@ const SearchForm = (props) => {
                         minDate = {departDate}
                     />
                 {/* </Form.Field> */}
+                <Form.Field>
+                    <Checkbox label='Search Flights' />
+                </Form.Field>
+                <Form.Field>
+                    <Checkbox label='Search Accommodations' onChange= {e => console.log(e)} value= {searchAccommodations}/>
+                </Form.Field>
                  <Button type="submit" value="Submit" ></Button>
             </Form>
         </div>
