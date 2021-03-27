@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 //Components
 import Login from '../components/Login'
@@ -8,8 +8,10 @@ function LoginPage() {
     
     return (
         <div className="container">
-            <Login />
-            <SignUp />
+            <div className="row">
+                <Login />
+                <SignUp />
+            </div>
         </div>
     )
 
