@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import './App.css';
 import Flights from './containers/Flights'
 import LoginPage from './containers/LoginPage'
+import Main from './containers/Main'
 
 function App() {
 
-  const [currentUserData, setCurrentUserData] = useState({})
+  const [currentUserData, setCurrentUserData] = useState(null)
 
   const login = (e) => {
 
@@ -81,7 +82,7 @@ function App() {
       <header className="App-header">
         <h1>Hello Travel Planner</h1>
         {/* <Flights /> */}
-        <LoginPage handleLogin={login} handleSignUp={signup} />
+        {currentUserData ? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
       </header>
     </div>
   );
