@@ -82,7 +82,7 @@ function App() {
       <header className="App-header">
         <h1>Hello Travel Planner</h1>
         {/* <Flights /> */}
-        {currentUserData ? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
+        {currentUserData && !currentUserData.message ? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
       </header>
     </div>
   );

@@ -2,7 +2,7 @@ const Main = ({ currentUser }) => {
 
     return (
         <div>
-            {`${currentUser.first_name} ${currentUser.last_name} -- ${currentUser.username}`}
+            {`${currentUser.first_name} ${currentUser.last_name} -- ${currentUser.id} ${currentUser.username}`}
         </div>
     )
 
