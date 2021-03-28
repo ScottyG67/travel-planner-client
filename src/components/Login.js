@@ -1,19 +1,19 @@
-const Login = () => {
+const Login = ({ handleLogin }) => {
 
     return (
         <div className="col-md-6">
             <h1>Welcome Back!</h1>
-            <form>
+            <form onSubmit={(e) => handleLogin(e)}>
                 <div className="mb-3">
-                    <label for="username" className="form-label">
+                    <label className="form-label">
                         Username
                         <input type="text" className="form-control" name="username"/>
                     </label>
                 </div>
                 <div className="mb-3">
-                    <label for="password" className="form-label">
+                    <label className="form-label">
                         Password
-                        <input type="email" className="form-control" name="password"/>
+                        <input type="password" className="form-control" name="password"/>
                     </label>
                 </div>
                 <div className="mb-3">
