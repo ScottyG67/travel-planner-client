@@ -37,6 +37,8 @@ function App() {
             console.log(profData)
           })
       })
+
+    e.target.reset()
   }
 
   const signup = (e) => {
@@ -70,6 +72,8 @@ function App() {
             console.log(profData)
           })
       })
+    
+    e.target.reset()
   }
 
   return (
