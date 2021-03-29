@@ -17,12 +17,6 @@ function Trips({updateTripList}) {
 
     useEffect( () => { getTrips() }, [])
 
-    useEffect (()=> function sendTripInfo() {
-        // const tripIdName = trips.map(trip => {trip.id, trip.name})
-        // console.log(tripIdName)
-        // updateTripList(trips)
-    })
-
 
     const getTrips = () => {
 
@@ -112,10 +106,6 @@ function Trips({updateTripList}) {
                 setTrips(list)
                 toggleEdit()
             })
-
-            
-            // renderView()
-
     }
 
     const deleteTrip =(tripId) => {
