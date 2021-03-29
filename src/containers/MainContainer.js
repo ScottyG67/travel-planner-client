@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Flights from './Flights'
+import FlightsContainer from './FlightsContainer'
 import SearchForm from '../components/SearchForm'
 
 export default class MainContainer extends React.Component {
@@ -21,7 +21,7 @@ render(){
     return(
         <div>
             <SearchForm passSearch={this.passSearch}/>
-            {this.state.renderFlights?<Flights searchRequest={this.state.searchRequest}/>:null}
+            {this.state.renderFlights?<FlightsContainer searchRequest={this.state.searchRequest}/>:null}
         </div>
     )
 }
