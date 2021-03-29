@@ -13,7 +13,7 @@ const SignUp = ({ handleSignUp }) => {
                 <div className="mb-3">
                     <label className="form-label">
                         Last Name
-                        <input type="text" className="form-control" id="signup-first-name" name="last_name"/>
+                        <input type="text" className="form-control" id="signup-last-name" name="last_name"/>
                     </label>
                 </div>
                 <div className="mb-3">
