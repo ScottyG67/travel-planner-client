@@ -38,12 +38,7 @@ const Flight = ({flight,saveFlight}) => {
                             <li>Land: {returnArriveTime}</li>
                         </ul>
                     </div>
-                    <Button animated onClick={()=>saveFlight(flight)}>
-                        <Button.Content visible>Lets Go!</Button.Content>
-                        <Button.Content hidden>
-                            <Icon name='arrow right' />
-                        </Button.Content>
-                    </Button>
+                    <button onClick={()=>saveFlight(flight)}>Lets Go!</button>
                 </div>
             </div>
         </div>
