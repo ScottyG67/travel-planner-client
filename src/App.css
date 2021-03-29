@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.prof-column {
+  margin: 2.5rem
+}
+
+.search-btn {
+  margin-top: 1rem;
+}
