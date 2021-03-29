@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Flight from '../components/Flight'
+import FlightCard from '../components/FlightCard'
 import DestinationTitleBar from '../components/DestinationTitleBar'
 
 export default class Flights extends React.Component {
@@ -38,14 +39,16 @@ export default class Flights extends React.Component {
     
     render() {
         return (
-            <div>
-                <DestinationTitleBar searchRequest={this.state.searchRequest}/>
-                {/* {this.state.flights !== []? <h1>Flights from {this.state.flights[0].itineraries[0].segments[0].departure} to {this.state.flights[0].itineraries[0].segments.slice(-1)[0].arrival}</h1>:null} */}
+            <div className="row overflow-auto" style={{marginTop: "2rem", height: "10rem"}}>
+                {/* <DestinationTitleBar searchRequest={this.state.searchRequest}/> */}
+                {/* {this.state.flights !== []? <h1>Flights from {this.state.flights[0].itineraries[0].segments[0].departure} to {this.state.flights[0].itineraries[0].segments.slice(-1)[0].arrival}</h1>:null}
                 <div className="ui four column grid">
                     <div className="row">
                         {this.state.flights.map(flight => <Flight key={flight.id} flight={flight}/>)}
                     </div>
-                </div>
+                </div> */}
+
+                {this.state.flights !== [] ? this.state.flights.map(flight => <FlightCard key={flight.id} flight={flight} />) : null}
             </div>
         )
     }
