@@ -29,17 +29,7 @@ function App() {
 
     fetch('http://localhost:3000/api/v1/login', reqObj)
       .then(res => res.json())
-      .then(data => { localStorage.setItem("token",data.jwt)
-        fetch('http://localhost:3000/api/v1/profile', {
-          method: "GET",
-          headers: {Authorization: `Bearer ${data.jwt}`}
-        }).then(res => res.json())
-          .then(profData => {
-            setCurrentUserData(profData)
-            console.log(profData)
-          })
-      }
-      )
+      .then(data => { profileFetch(data) })
 
     e.target.reset()
   }
@@ -65,18 +55,22 @@ function App() {
 
     fetch('http://localhost:3000/api/v1/users', reqObj)
       .then(res => res.json())
-      .then(data => {
-        fetch('http://localhost:3000/api/v1/profile', {
-          method: "GET",
-          headers: {Authorization: `Bearer ${data.jwt}`}
-        }).then(res => res.json())
-          .then(profData => {
-            setCurrentUserData(profData)
-            console.log(profData)
-          })
-      })
-    
+      .then(data => { profileFetch(data) })
     e.target.reset()
+  }
+
+  // get auth token and user info from server
+  const profileFetch = (data) => {
+    localStorage.setItem("token",data.jwt)
+    fetch('http://localhost:3000/api/v1/profile', {
+      method: "GET",
+      headers: {Authorization: `Bearer ${data.jwt}`}
+    }).then(res => res.json())
+      .then(profData => {
+        setCurrentUserData(profData)
+        localStorage.setItem("id",profData["id"])
+        console.log(profData)
+      })
   }
 
   return (

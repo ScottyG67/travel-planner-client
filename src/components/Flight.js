@@ -1,7 +1,7 @@
 import React from 'react'
-// import { List } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 
-const Flight = ({flight}) => {
+const Flight = ({flight,saveFlight}) => {
 
     const outDepart = flight.itineraries[0].segments[0].departure
     const outArrive = flight.itineraries[0].segments.slice(-1)[0].arrival
@@ -38,6 +38,12 @@ const Flight = ({flight}) => {
                             <li>Land: {returnArriveTime}</li>
                         </ul>
                     </div>
+                    <Button animated onClick={()=>saveFlight(flight)}>
+                        <Button.Content visible>Lets Go!</Button.Content>
+                        <Button.Content hidden>
+                            <Icon name='arrow right' />
+                        </Button.Content>
+                    </Button>
                 </div>
             </div>
         </div>
