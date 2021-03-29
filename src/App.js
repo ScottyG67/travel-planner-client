@@ -82,7 +82,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello Travel Planner</h1>
         {currentUserData && !currentUserData.message ? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
         {/* <MainContainer /> */}
       </header>

@@ -4,10 +4,13 @@ import React, { useState } from 'react'
 const FlightSearch = ({ passSearch }) => {
 
     const [departDate, setDepartDate] = useState(new Date())
+    const [returnDate, setReturnDate] = useState(new Date())
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e.target)
+        const targ = e.target
+        passSearch(departDate, returnDate, targ.depart_location.value, targ.destination.value)
+        e.target.reset()
     }
 
     return (
@@ -16,7 +19,7 @@ const FlightSearch = ({ passSearch }) => {
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div className="form-group row">
                     <label className="col-sm-2 col-form-label">Flight</label>
-                    <input type="text" className="col-sm-10 form-control" name="departure_location" placeholder="From?"/>
+                    <input type="text" className="col-sm-10 form-control" name="depart_location" placeholder="From?"/>
                 </div>
                 <div className="form-group row">
                     <label className="col-sm-2 col-form-label">Flight</label>
@@ -28,7 +31,7 @@ const FlightSearch = ({ passSearch }) => {
                 </div>
                 <div className="form-group row">
                     <label className="col-sm-2 col-form-label">Returning</label>
-                    <input type="date" min={departDate} className="col-sm-10 form-control" name="return_date"/>
+                    <input type="date" min={departDate} onChange={(e) => setReturnDate(e.target.value)} className="col-sm-10 form-control" name="return_date"/>
                 </div>
                 <div className="form-group row">
                     <label className="col-sm-2 col-form-label">People</label>

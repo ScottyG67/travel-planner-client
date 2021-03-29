@@ -13,6 +13,7 @@ const SearchForm = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
+        
         props.passSearch(departDate,returnDate,departLoc,arriveLoc)
         setDepartDate("")
         setReturnDate("")
