@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import MainContainer from './containers/MainContainer';
 import './App.css';
-import Flights from './containers/Flights'
+
 import LoginPage from './containers/LoginPage'
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
 
     fetch('http://localhost:3000/api/v1/login', reqObj)
       .then(res => res.json())
-      .then(data => {
+      .then(data => { localStorage.setItem("token",data.jwt)
         fetch('http://localhost:3000/api/v1/profile', {
           method: "GET",
           headers: {Authorization: `Bearer ${data.jwt}`}
@@ -36,7 +37,8 @@ function App() {
             setCurrentUserData(profData)
             console.log(profData)
           })
-      })
+      }
+      )
 
     e.target.reset()
   }
@@ -80,8 +82,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Hello Travel Planner</h1>
-        {/* <Flights /> */}
         <LoginPage handleLogin={login} handleSignUp={signup} />
+        <MainContainer />
       </header>
     </div>
   );
