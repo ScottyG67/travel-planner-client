@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const Flight = ({flight,saveFlight}) => {
+const Flight = ({flight,saveFlight,trips}) => {
+    const [tripId,setTripId]=useState()
+
+
 
     const outDepart = flight.itineraries[0].segments[0].departure
     const outArrive = flight.itineraries[0].segments.slice(-1)[0].arrival
@@ -13,6 +16,11 @@ const Flight = ({flight,saveFlight}) => {
     const returnDate = returnDepart.at.slice(5,10)+-+returnDepart.at.slice(0,4)
     const returnDepartTime = returnDepart.at.slice(11,-3)
     const returnArriveTime = returnArrive.at.slice(11,-3)
+
+    const handleSubmit = (e,flight,tripId) =>{
+        e.preventDefault()
+        saveFlight(flight,tripId)
+    }
     
 
     return (
@@ -37,7 +45,13 @@ const Flight = ({flight,saveFlight}) => {
                             <li>Land: {returnArriveTime}</li>
                         </ul>
                     </div>
-                    <button onClick={()=>saveFlight(flight)}>Lets Go!</button>
+                    <form onSubmit= {(e)=>handleSubmit(e,flight,tripId)}>
+                        <select onChange={(e)=> setTripId(e.target.value)}>
+                            {trips.map(trip => <option value={trip.id}>{trip.name}</option>)}
+                        </select>
+                        <button type="submit" value="Submit">Lets Go!</button>
+                    </form>
+                    
                 </div>
             </div>
         </div>
