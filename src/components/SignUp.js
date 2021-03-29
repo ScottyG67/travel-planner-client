@@ -8,9 +8,11 @@ const SignUp = ({ handleSignUp }) => {
                     <input type="text" className="form-control" id="signup-first-name" name="first_name" placeholder="First Name"/>
                 </div>
                 <div className="mb-3">
-                    <input type="text" className="form-control" id="signup-last-name" name="last_name" placeholder="Last Name"/>                </div>
+                    <input type="text" className="form-control" id="signup-last-name" name="last_name" placeholder="Last Name"/>
+                </div>
                 <div className="mb-3">
-                    <input type="text" className="form-control" id="signup-username" name="username" placeholder="Username"/>                </div>
+                    <input type="text" className="form-control" id="signup-username" name="username" placeholder="Username"/>
+                </div>
                 <div className="mb-3">
                     <input type="password" className="form-control" id="signup-password" name="password" placeholder="Password"/>
                 </div>

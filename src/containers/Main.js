@@ -17,8 +17,17 @@ const Main = ({ currentUser }) => {
     return (
         <div>
             <h1>{ `Hello, ${currentUser.first_name}!` }</h1>
-            <SearchForm passSearch={passSearch} />
-            {renderFlights ? <FlightsContainer searchRequest={searchRequest} /> : null}
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6">
+                        <SearchForm passSearch={passSearch} />
+                        {renderFlights ? <FlightsContainer searchRequest={searchRequest} /> : null}
+                    </div>
+                    <div className="col-md-6">
+                        <h1>Photo Feed</h1>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 
