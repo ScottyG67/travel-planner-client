@@ -9,7 +9,7 @@ export default class MainContainer extends React.Component {
         renderFlights: false,
         renderHouses: false,
         searchRequest: {},
-        tripList: []
+        trips: []
     }
 
     passSearch = (dateStart,dateEnd,locStart,locEnd) => {
@@ -17,18 +17,27 @@ export default class MainContainer extends React.Component {
         this.setState({searchRequest:{startDate:dateStart,endDate:dateEnd,depart:locStart,arrive:locEnd}})
         this.setState({renderFlights:true})
     }
-
-    tripList = (listOfTrips) => {
-        console.log(listOfTrips)
+ 
+    updateTripList = (listOfTrips) => {
+        console.log('updating')
         this.setState({tripList:listOfTrips})
     }
 
-
+    // updateTripList = (trip) => {
+    //     let list = this.state.tripList.map(trip => trip)
+    //     const index = list.findIndex(curTrip=>curTrip.id === trip.id)
+    //     if(index) {
+    //         list[index] = trip
+    //         this.setState({tripList:list})
+    //     } else {
+    //         this.setState({tripList: [...list,trip]})
+    //     }
+    // }
 
     render(){
         return(
             <div>
-                <Trips trips={this.state.tripList} tripList={this.tripList}/>
+                <Trips updateTripList={this.updateTripList}/>
                 <SearchForm passSearch={this.passSearch}/>
                 {this.state.renderFlights?<Flights searchRequest={this.state.searchRequest} trips={this.state.tripList}/>:null}
             </div>
