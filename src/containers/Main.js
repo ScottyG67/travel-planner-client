@@ -8,7 +8,6 @@ import PhotosContainer from './PhotosContiner'
 
 const Main = ({ currentUser }) => {
 
-    // const [renderFlights, setRenderFlights] = useState(false)
     // const [searchRequest, setSearchRequest] = useState({})
     const [flightsList, setFlightsList] = useState(null)
 
@@ -39,8 +38,8 @@ const Main = ({ currentUser }) => {
                 <Trips />
                     <div className="col-md-6 prof-column">
                         <FlightSearch searchFlights={searchFlights} updateFlights={setFlightsList} />
-                        {/* {flightsList ? <FlightsContainer searchFlights={searchFlights} updateFlights={setFlightsList} flights={flightsList} searchRequest={searchRequest} /> : null} */}
                         {flightsList ? <FlightsContainer searchFlights={searchFlights} updateFlights={setFlightsList} flights={flightsList} /> : null}
+                        {flightsList ? <button onClick={() => setFlightsList(null)} className='btn btn-danger'>Clear Results</button> : null }
                     </div>
                     <div className="col-md-3 prof-column">
                         <PhotosContainer />
