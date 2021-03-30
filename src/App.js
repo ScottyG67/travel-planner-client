@@ -77,7 +77,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         {currentUserData && !currentUserData.message ? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
-        {/* <MainContainer /> */}
       </header>
     </div>
   );

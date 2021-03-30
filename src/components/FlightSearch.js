@@ -1,16 +1,28 @@
 import React, { useState } from 'react'
 
 
-const FlightSearch = ({ passSearch }) => {
+const FlightSearch = (props) => {
 
     const [departDate, setDepartDate] = useState(new Date())
     const [returnDate, setReturnDate] = useState(new Date())
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const targ = e.target
-        passSearch(departDate, returnDate, targ.depart_location.value, targ.destination.value)
+        let newObj = searchObj(e)
+        props.searchFlights(newObj, props.updateFlights)
         e.target.reset()
+    }
+
+    const searchObj = (e) => {
+
+        const targ = e.target
+
+        return {
+            startDate: departDate,
+            endDate: returnDate,
+            depart: targ.depart_location.value,
+            arrive: targ.destination.value
+        }
     }
 
     return (

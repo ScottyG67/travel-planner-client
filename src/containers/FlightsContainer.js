@@ -1,16 +1,10 @@
 import React from 'react'
 
-import Flight from '../components/Flight'
 import FlightCard from '../components/FlightCard'
-import DestinationTitleBar from '../components/DestinationTitleBar'
 
 export default class Flights extends React.Component {
-    state = {
-        flights: [],
-        dictionary:[],
-        searchRequest:[]
-    }
 
+    // Fix/Delete this?
     componentDidMount() {
         this.searchFlights()
 
@@ -19,6 +13,7 @@ export default class Flights extends React.Component {
         // fetch("http://localhost:3000/dictionaries").then(res=>res.json()).then(dictionary => this.setState({dictionary: dictionary}))
     }
 
+    // Fix/Delete this?
     searchFlights = () => {
 
         const token = localStorage.getItem('token')
@@ -34,8 +29,10 @@ export default class Flights extends React.Component {
 
         fetch("http://localhost:3000/api/v1/search_flights",reqObj)
             .then( resp => resp.json() )
+            // Fix this?
             .then( resp => this.setState( { flights: resp.data } ) )
-
+        
+        // Fix this?
         this.setState({searchRequest: this.props.searchRequest})
     }
 
@@ -64,7 +61,7 @@ export default class Flights extends React.Component {
             <div>
                 <h2 style={{marginTop: "2rem"}}>Results</h2>
                 <div className="row overflow-auto" style={{marginTop: ".5rem", height: "20rem"}}>
-                    {this.state.flights !== [] ? this.state.flights.map(flight => <FlightCard key={flight.id} flight={flight} />) : null}
+                    {this.props.flights && this.props.flights !== [] ? this.props.flights.map(flight => <FlightCard key={flight.id} flight={flight} />) : null}
                 </div>
             </div>
         )
