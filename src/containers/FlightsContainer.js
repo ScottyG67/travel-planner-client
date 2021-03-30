@@ -39,7 +39,7 @@ export default class Flights extends React.Component {
     
     render() {
         return (
-            <div className="row overflow-auto" style={{marginTop: "2rem", height: "10rem"}}>
+            <div className="row overflow-auto" style={{marginTop: "2rem", height: "20rem"}}>
                 {/* <DestinationTitleBar searchRequest={this.state.searchRequest}/> */}
                 {/* {this.state.flights !== []? <h1>Flights from {this.state.flights[0].itineraries[0].segments[0].departure} to {this.state.flights[0].itineraries[0].segments.slice(-1)[0].arrival}</h1>:null}
                 <div className="ui four column grid">

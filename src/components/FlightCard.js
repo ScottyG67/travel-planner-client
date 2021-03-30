@@ -2,21 +2,42 @@ import React from 'react'
 
 const FlightCard = ({ flight }) => {
 
+    // const departDetails = flight.itineraries[0].segments[0]
+    // const returnDetails = flight.itineraries[1].segments[0]
+
+    const timeConverter = (str) => {
+        let timeBreaks = str.split(':')
+        let hours = timeBreaks[0]
+        let minutes = timeBreaks[1]
+
+        let newTime = ''
+
+        if(parseInt(hours) < 12){
+            if(hours === "00") {
+                hours = '12'
+            }
+
+            newTime = `${hours}:${minutes} AM`
+        } else {
+            hours = parseInt(hours) - 12
+
+            newTime = `${hours}:${minutes} PM`
+        }
+
+        return newTime
+    }
+
     return (
-        // <tr onClick={() => alert(`Flight: ${flight.id} was clicked`)} style={{fontSize: "14px"}}>
-        //     <td>{`$${flight.price.total}`}</td>
-        //     <td>{flight.itineraries[0].segments[0].departure.at.split("T")[0]}</td>
-        //     <td>{flight.itineraries[0].segments[0].departure.iataCode}</td>
-        //     <td>{flight.itineraries[0].segments[0].departure.at.split("T")[1]}</td>
-        //     <td>{flight.itineraries[0].segments[0].arrival.iataCode}</td>
-        //     <td>{flight.itineraries[0].segments[0].arrival.at.split("T")[1]}</td>
-        // </tr>
-        <div className="col-sm-6">
-            <div className="card" style={{marginTop: ".5rem"}}>
+        <div className="col-sm-12">
+            <div className="card" style={{marginTop: ".5rem", color: "black"}}>
                 <div className="card-body">
-                    {/* <h5 className="card-title">{`${flight.itineraries[0].segments[0].departure.iataCode} --> ${flight.itineraries[0].segments[0].arrival.iataCode}`}</h5>
-                    <h6 className="card-text">{`$${flight.price.total}`}</h6> */}
-                    <h1>Hello</h1>
+                    <h5 className="card-title">{`$${flight.price.total}`} <button type="button" onClick={() => alert('User wants to book flight')} className="btn btn-primary">Book Now!</button></h5>
+                    <hr />
+                    <p className="card-text">{`${flight.itineraries[0].segments[0].departure.iataCode} --> ${flight.itineraries[0].segments[0].arrival.iataCode}`}</p>
+                    <p className="card-text">{`${flight.itineraries[0].segments[0].departure.at.split("T")[0]} @ ${timeConverter(flight.itineraries[0].segments[0].departure.at.split("T")[1])}`}</p>
+                    <hr />
+                    <p className="card-text">{`${flight.itineraries[1].segments[0].departure.iataCode} --> ${flight.itineraries[1].segments[0].arrival.iataCode}`}</p>
+                    <p className="card-text">{`${flight.itineraries[1].segments[0].departure.at.split("T")[0]} @ ${timeConverter(flight.itineraries[1].segments[0].departure.at.split("T")[1])}`}</p>
                 </div>
             </div>
         </div>
