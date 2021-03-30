@@ -23,23 +23,12 @@ export default class MainContainer extends React.Component {
         this.setState({tripList:listOfTrips})
     }
 
-    // updateTripList = (trip) => {
-    //     let list = this.state.tripList.map(trip => trip)
-    //     const index = list.findIndex(curTrip=>curTrip.id === trip.id)
-    //     if(index) {
-    //         list[index] = trip
-    //         this.setState({tripList:list})
-    //     } else {
-    //         this.setState({tripList: [...list,trip]})
-    //     }
-    // }
-
     render(){
         return(
             <div>
-                <Trips updateTripList={this.updateTripList}/>
-                <SearchForm passSearch={this.passSearch}/>
-                {this.state.renderFlights?<FlightsContainer searchRequest={this.state.searchRequest} trips={this.state.tripList}/>:null}
+                <Trips updateMainContTripList={this.updateTripList}/>
+                {/* <SearchForm passSearch={this.passSearch}/> */}
+                {/* {this.state.renderFlights?<FlightsContainer searchRequest={this.state.searchRequest} trips={this.state.tripList}/>:null} */}
             </div>
         )
     }
