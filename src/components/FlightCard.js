@@ -67,7 +67,7 @@ const FlightCard = ({ flight,changeBooking,trips,btnTxt }) => {
                     { showTrips ? 
                         <select onChange={handleSelect}>
                             <option value="none">Pick a Trip</option>
-                            {trips.map(trip => <option value={trip.id}>{trip.name}</option>)}
+                            {trips.length > 0 ? trips.map(trip => <option value={trip.id}>{trip.name}</option>) : null }
                             <option value="new">Make New Trip</option>
                         </select>
                         :

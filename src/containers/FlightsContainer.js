@@ -75,7 +75,7 @@ export default class Flights extends React.Component {
 
     saveFlight = (flight,tripId) => {
         
-
+        //newTrip is fetch so need to get tripId assignment to wait for it to complete
         if(tripId === "new"){
             this.newTrip()
             tripId = this.state.trips.slice(-1)[0].id
@@ -140,7 +140,7 @@ export default class Flights extends React.Component {
                 <h2 style={{marginTop: "2rem"}}>Results</h2>
                 <div className="row overflow-auto" style={{marginTop: ".5rem", height: "20rem"}}>
                     {/* Have to Resolve the Below Issure -- Bottom is still using this.state stuff but has new... */}
-                    {this.props.flights && this.props.flights !== [] ? this.props.flights.map(flight => <FlightCard key={flight.id} flight={flight} btnTxt={"Book Now!"} />) : null}
+                    {this.props.flights && this.props.flights !== [] ? this.props.flights.map(flight => <FlightCard key={flight.id} flight={flight} btnTxt={"Book Now!"} trips={this.state.trips} changeBooking={this.saveFlight} />) : null}
                     {/* {this.state.flights !== [] ? this.state.flights.map(flight => <FlightCard key={flight.id} flight={flight} changeBooking = {this.saveFlight} btnTxt={'Book Now!'} trips = {this.state.trips}/>) : null} */}
                 </div>
             </div>
