@@ -45,9 +45,38 @@
   margin-top: 1rem;
 }
 
-.thumbnail {
+.thumbnail--active {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 150px;
+}
+
+.thumbnail--hidden {
+  display:none
+}
+
+.inline-text_copy--active,
+.inline-text_input--active {
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px dashed #666666;
+}
+
+.inline-text_copy--active {
+  cursor: pointer;
+}
+
+.inline-text_copy--hidden,
+.inline-text_input--hidden {
+  display: none;
+}
+
+.inline-text_input--active {
+  border-bottom: 1px solid #666666;
+  text-align: left;
 }

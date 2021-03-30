@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react"
-import DestinationTitleBar from "../components/DestinationTitleBar"
+// import DestinationTitleBar from "../components/DestinationTitleBar"
 import TripCard from '../components/TripCard'
 import TripDetails from '../components/TripDetails'
-import EditTrip from '../components/EditTrip'
+// import EditTrip from '../components/EditTrip'
 // import React {useState, useEffect} from 'react'
 
 
 
-function Trips({updateTripList}) {
+function Trips({updateMainContTripList}) {
 
     const [trips, setTrips] = useState([])
     const [renderList, setRenderList] = useState(true)
     const [tripDetail, setTripDetail] = useState({})
     const [flights, setFlights] = useState([])
-    const [editTrip,setEditTrip] = useState(false)
+    // const [editTrip,setEditTrip] = useState(false)
 
     useEffect( () => { getTrips() }, [])
 
@@ -34,7 +34,10 @@ function Trips({updateTripList}) {
 
         fetch(`http://localhost:3000/api/v1/users/${userId}/trips`,reqObj)
             .then( resp => resp.json() )
-            .then( respTrips => setTrips(respTrips))
+            .then( respTrips => {
+                setTrips(respTrips)
+                updateMainContTripList(respTrips)
+            })
 
     }
 
@@ -60,7 +63,10 @@ function Trips({updateTripList}) {
 
         fetch(`http://localhost:3000/api/v1/users/${userId}/trips`,reqObj)
             .then( resp => resp.json() )
-            .then(respTrip => setTrips([...trips,respTrip]))
+            .then(respTrip => {
+                setTrips([...trips,respTrip])
+                updateMainContTripList(trips)
+            })
 
     }
 
@@ -71,9 +77,9 @@ function Trips({updateTripList}) {
         setRenderList(!renderList)
     }
 
-    const toggleEdit = () => {
-        setEditTrip(!editTrip)
-    }
+    // const toggleEdit = () => {
+    //     setEditTrip(!editTrip)
+    // }
 
     const saveEdit = (tripId,name,description,image) => {
         
@@ -104,7 +110,8 @@ function Trips({updateTripList}) {
                 const index = list.findIndex(trip=>trip.id === respTrip.id)
                 list[index] = respTrip
                 setTrips(list)
-                toggleEdit()
+                updateMainContTripList(list)
+                // toggleEdit()
             })
     }
 
@@ -125,6 +132,7 @@ function Trips({updateTripList}) {
         .then(_ => {
           let newList = trips.filter(trip => trip.id !== tripId)
           setTrips(newList)
+          updateMainContTripList(newList)
           setRenderList(true)
         })
       }
@@ -133,16 +141,15 @@ function Trips({updateTripList}) {
     // change renderList and edit trip to one conditional
     const renderView = (trip) =>{
         if (renderList){
+            // debugger
             return trips.map( trip => <TripCard key={trip.id} trip={trip} showDetail={showDetail}/>)
-        } else if (!editTrip){
-            return <TripDetails trip={tripDetail} showDetail={showDetail} toggleEdit={toggleEdit} deleteTrip = {deleteTrip}/>
-        } else {
-            return <EditTrip trip={tripDetail} saveEdit ={saveEdit} />
-        }
-
-        // const tripIdName = trips.map(trip => {trip.id, trip.name})
-        // console.log(tripIdName)
-        updateTripList(trips)
+        } else {//if (!editTrip){
+            return <TripDetails trip={tripDetail} showDetail={showDetail}  deleteTrip = {deleteTrip} saveEdit ={saveEdit} /> //toggleEdit={toggleEdit}/>
+        } 
+        // else {
+        //     return <EditTrip trip={tripDetail} saveEdit ={saveEdit} />
+        // }
+        
     }
 
     return(
