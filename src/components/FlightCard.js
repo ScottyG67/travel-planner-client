@@ -3,6 +3,8 @@ import React from 'react'
 
 const FlightCard = ({ flight,changeBooking,trips,btnTxt }) => {
 
+    // I think LAX has some issues with the segments... might need to take a closer look specifically at LAX but not noticing the same issues with any other two airports, even ones I know don't have direct flights.
+
     // Work on functions like flight path to clean up what's happening below...
         // Start with different  functions for outgoing and incoming.
     const flightPath = (f, i) => {
