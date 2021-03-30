@@ -36,7 +36,7 @@ function App() {
         }).then(res => res.json())
           .then(profData => {
             setCurrentUserData(profData)
-            console.log(profData)
+            // console.log(profData)
           })
       }
       )
