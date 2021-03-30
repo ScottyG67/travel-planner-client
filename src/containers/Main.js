@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 
 import Trips from './Trips'
 import FlightsContainer from './FlightsContainer'
-// import SearchForm from '../components/SearchForm'
 import FlightSearch from '../components/FlightSearch'
 import PhotosContainer from './PhotosContiner'
+import userEvent from '@testing-library/user-event'
 
 const Main = ({ currentUser }) => {
 
     // const [searchRequest, setSearchRequest] = useState({})
     const [flightsList, setFlightsList] = useState(null)
+    const [flightDetails, setFlightDetails] = useState(null)
 
     const searchFlights = (obj, updateFlights) => {
         const reqObj = {
@@ -35,10 +36,14 @@ const Main = ({ currentUser }) => {
             <h1>{ `Hello, ${currentUser.first_name}!` }</h1>
             <div className="container">
                 <div className="row">
-                <Trips />
+                    <div className="col-md-12">
+                        <Trips />
+                    </div>
+                </div>
+                <div className="row">
                     <div className="col-md-6 prof-column">
                         <FlightSearch searchFlights={searchFlights} updateFlights={setFlightsList} />
-                        {flightsList ? <FlightsContainer searchFlights={searchFlights} updateFlights={setFlightsList} flights={flightsList} /> : null}
+                        {flightsList ? <FlightsContainer searchFlights={searchFlights} updateFlights={setFlightsList} flights={flightsList} flightDetails={setFlightDetails} /> : null}
                         {flightsList ? <button onClick={() => setFlightsList(null)} className='btn btn-danger'>Clear Results</button> : null }
                     </div>
                     <div className="col-md-3 prof-column">
