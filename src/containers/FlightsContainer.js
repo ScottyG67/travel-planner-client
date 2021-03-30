@@ -24,12 +24,8 @@ export default class Flights extends React.Component {
 
     // Fix/Delete this?
     componentDidMount() {
-        this.searchFlights()
-        this.getTrips()
-
-        //frontend json db fetch
-        // fetch("http://localhost:3000/data").then(res=>res.json()).then(flights => this.setState({flights: flights}))
-        // fetch("http://localhost:3000/dictionaries").then(res=>res.json()).then(dictionary => this.setState({dictionary: dictionary}))
+        this.searchFlights() // populate flights state
+        this.getTrips() // populate trips state
     }
 
     // Fix/Delete this?
