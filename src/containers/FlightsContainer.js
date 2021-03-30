@@ -4,15 +4,15 @@ import FlightCard from '../components/FlightCard'
 
 export default class Flights extends React.Component {
 
-    componentDidMount() {
-        //server fetch
-        // fetch("http://localhost:3000/api/v1/flight_searches/").then(res=>res.json()).then(flights => this.setState({flights: flights.data}))
-        this.props.searchFlights()
-        //development fetch
-        // fetch("http://localhost:3000/data").then(res=>res.json()).then(flights => this.setState({flights: flights}))
-        // fetch("http://localhost:3000/dictionaries").then(res=>res.json()).then(dictionary => this.setState({dictionary: dictionary}))
+    // componentDidMount() {
+    //     //server fetch
+    //     // fetch("http://localhost:3000/api/v1/flight_searches/").then(res=>res.json()).then(flights => this.setState({flights: flights.data}))
+    //     this.props.searchFlights()
+    //     //development fetch
+    //     // fetch("http://localhost:3000/data").then(res=>res.json()).then(flights => this.setState({flights: flights}))
+    //     // fetch("http://localhost:3000/dictionaries").then(res=>res.json()).then(dictionary => this.setState({dictionary: dictionary}))
         
-    }
+    // }
     
     render() {
         return (

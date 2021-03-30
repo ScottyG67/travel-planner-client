@@ -24,7 +24,6 @@ const Main = ({ currentUser }) => {
         fetch('http://localhost:3000/api/v1/search_flights', reqObj)
             .then(res => res.json())
             .then(resData => {
-                console.log(resData)
                 updateFlights(resData.data)
             })
         // setSearchRequest(obj)
@@ -36,10 +35,9 @@ const Main = ({ currentUser }) => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 prof-column">
-                        {/* <SearchForm passSearch={passSearch} /> */}
-                        {/* <FlightSearch passSearch={passSearch} /> */}
                         <FlightSearch searchFlights={searchFlights} updateFlights={setFlightsList} />
-                        {flightsList ? <FlightsContainer searchFlights={searchFlights} flights={flightsList} searchRequest={searchRequest} /> : null}
+                        {/* {flightsList ? <FlightsContainer searchFlights={searchFlights} updateFlights={setFlightsList} flights={flightsList} searchRequest={searchRequest} /> : null} */}
+                        {flightsList ? <FlightsContainer searchFlights={searchFlights} updateFlights={setFlightsList} flights={flightsList} /> : null}
                     </div>
                     <div className="col-md-3 prof-column">
                         <h1>Photo Feed</h1>
