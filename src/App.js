@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import MainContainer from './containers/MainContainer';
+import React from 'react'
+import { useEffect, useState } from "react"
 import './App.css';
 
 import LoginPage from './containers/LoginPage'
@@ -8,6 +8,34 @@ import Main from './containers/Main'
 function App() {
 
   const [currentUserData, setCurrentUserData] = useState(null)
+  const [loggedIn, setLoggedIn] = useState(false)
+
+
+  // check if user is still logged in on initial page load
+  useEffect( () => {
+    const token = localStorage.getItem("token")
+    if(token) {
+      //query server to see if token still valid
+      fetch('http://localhost:3000/api/v1/profile', {
+        method: "GET",
+        headers: {Authorization: `Bearer ${token}`}
+      }).then(res => res.json())
+        .then(profData => {
+          if(!profData.message){
+            //login if server response it good
+            setCurrentUserData(profData)
+            setLoggedIn(true)
+            localStorage.setItem("id",profData["id"])
+          } else {
+            //clear data is server response is bad
+            logout()
+          }
+        })
+    }
+
+  }, [])
+
+
 
   const login = (e) => {
 
@@ -29,7 +57,10 @@ function App() {
 
     fetch('http://localhost:3000/api/v1/login', reqObj)
       .then(res => res.json())
-      .then(data => { profileFetch(data) })
+      .then(data => { 
+        localStorage.setItem("token",data.jwt)
+        profileFetch() 
+      })
 
     e.target.reset()
   }
@@ -55,29 +86,43 @@ function App() {
 
     fetch('http://localhost:3000/api/v1/users', reqObj)
       .then(res => res.json())
-      .then(data => { profileFetch(data) })
+      .then(data => { 
+        localStorage.setItem("token",data.jwt)
+        profileFetch() })
     e.target.reset()
   }
 
-  // get auth token and user info from server
-  const profileFetch = (data) => {
-    localStorage.setItem("token",data.jwt)
+  // get user info from server
+  const profileFetch = () => {
+    const token = localStorage.getItem("token")
     fetch('http://localhost:3000/api/v1/profile', {
       method: "GET",
-      headers: {Authorization: `Bearer ${data.jwt}`}
+      headers: {Authorization: `Bearer ${token}`}
     }).then(res => res.json())
       .then(profData => {
-        setCurrentUserData(profData)
-        localStorage.setItem("id",profData["id"])
-        console.log(profData)
+        if(!profData.message){
+          setCurrentUserData(profData)
+          setLoggedIn(true)
+          localStorage.setItem("id",profData["id"])
+        } else {
+          setLoggedIn(false)
+          alert('incorrect username or password')
+        }
       })
+  }
+
+  const logout = () => {
+    setCurrentUserData(null)
+    setLoggedIn(false)
+    localStorage.removeItem('id')
+    localStorage.removeItem('token')
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        {currentUserData && !currentUserData.message ? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
-        <MainContainer />
+        {loggedIn? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
+        <button onClick={logout}>Logout</button>
       </header>
     </div>
   );

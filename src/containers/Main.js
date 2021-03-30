@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 
+import Trips from './Trips'
 import FlightsContainer from './FlightsContainer'
 import SearchForm from '../components/SearchForm'
 import FlightSearch from '../components/FlightSearch'
+import PhotosContainer from './PhotosContiner'
 
 const Main = ({ currentUser }) => {
 
@@ -20,13 +22,14 @@ const Main = ({ currentUser }) => {
             <h1>{ `Hello, ${currentUser.first_name}!` }</h1>
             <div className="container">
                 <div className="row">
+                <Trips />
                     <div className="col-md-6 prof-column">
                         {/* <SearchForm passSearch={passSearch} /> */}
                         <FlightSearch passSearch={passSearch} />
                         {renderFlights ? <FlightsContainer searchRequest={searchRequest} /> : null}
                     </div>
                     <div className="col-md-3 prof-column">
-                        <h1>Photo Feed</h1>
+                        <PhotosContainer />
                     </div>
                 </div>
             </div>

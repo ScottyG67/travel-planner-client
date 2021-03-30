@@ -7,12 +7,11 @@ import TripDetails from '../components/TripDetails'
 
 
 
-function Trips({updateMainContTripList}) {
+function Trips() {
 
     const [trips, setTrips] = useState([])
     const [renderList, setRenderList] = useState(true)
     const [tripDetail, setTripDetail] = useState({})
-    const [flights, setFlights] = useState([])
 
     useEffect( () => { getTrips() }, [])
 
@@ -35,7 +34,6 @@ function Trips({updateMainContTripList}) {
             .then( resp => resp.json() )
             .then( respTrips => {
                 setTrips(respTrips)
-                updateMainContTripList(respTrips)
             })
 
     }
@@ -64,7 +62,6 @@ function Trips({updateMainContTripList}) {
             .then( resp => resp.json() )
             .then(respTrip => {
                 setTrips([...trips,respTrip])
-                updateMainContTripList(trips)
             })
 
     }
@@ -105,7 +102,6 @@ function Trips({updateMainContTripList}) {
                 const index = list.findIndex(trip=>trip.id === respTrip.id)
                 list[index] = respTrip
                 setTrips(list)
-                updateMainContTripList(list)
             })
     }
 
@@ -126,7 +122,6 @@ function Trips({updateMainContTripList}) {
         .then(_ => {
           let newList = trips.filter(trip => trip.id !== tripId)
           setTrips(newList)
-          updateMainContTripList(newList)
           setRenderList(true)
         })
       }
