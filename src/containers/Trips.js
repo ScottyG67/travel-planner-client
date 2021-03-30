@@ -13,7 +13,6 @@ function Trips({updateMainContTripList}) {
     const [renderList, setRenderList] = useState(true)
     const [tripDetail, setTripDetail] = useState({})
     const [flights, setFlights] = useState([])
-    // const [editTrip,setEditTrip] = useState(false)
 
     useEffect( () => { getTrips() }, [])
 
@@ -77,10 +76,6 @@ function Trips({updateMainContTripList}) {
         setRenderList(!renderList)
     }
 
-    // const toggleEdit = () => {
-    //     setEditTrip(!editTrip)
-    // }
-
     const saveEdit = (tripId,name,description,image) => {
         
         const token = localStorage.getItem('token')
@@ -111,7 +106,6 @@ function Trips({updateMainContTripList}) {
                 list[index] = respTrip
                 setTrips(list)
                 updateMainContTripList(list)
-                // toggleEdit()
             })
     }
 
@@ -138,17 +132,16 @@ function Trips({updateMainContTripList}) {
       }
 
 
-    // change renderList and edit trip to one conditional
     const renderView = (trip) =>{
         if (renderList){
-            // debugger
-            return trips.map( trip => <TripCard key={trip.id} trip={trip} showDetail={showDetail}/>)
-        } else {//if (!editTrip){
+            if(trips.length ===0){
+                return <h1>No Trips</h1>
+            } else {
+                return trips.map( trip => <TripCard key={trip.id} trip={trip} showDetail={showDetail}/>)
+            }
+        } else {
             return <TripDetails trip={tripDetail} showDetail={showDetail}  deleteTrip = {deleteTrip} saveEdit ={saveEdit} /> //toggleEdit={toggleEdit}/>
         } 
-        // else {
-        //     return <EditTrip trip={tripDetail} saveEdit ={saveEdit} />
-        // }
         
     }
 

@@ -54,6 +54,26 @@ const TripDetails = ({trip,showDetail,toggleEdit,deleteTrip,saveEdit}) => {
         .then(resFlights => setFlights(resFlights))
     },[])
 
+    const cancelFlight = (flightId) => {
+        const userId= localStorage.getItem('id')
+        const token = localStorage.getItem('token')
+        const reqObj = {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        }
+
+        fetch(`http://localhost:3000/api/v1/users/${userId}/flights/${flightId}`,reqObj)
+            .then( resp => resp.json() )
+            .then(deletedFlight => {
+                const newFlightsList = flights.filter(flight => flight.id !== deletedFlight.id)
+                setFlights(newFlightsList)
+            })
+    }
+
 /// Hooks for Name Field
     // this hook takes a ref to watch and a function to run
     // if the click happened outside
@@ -186,7 +206,7 @@ const TripDetails = ({trip,showDetail,toggleEdit,deleteTrip,saveEdit}) => {
                 <button onClick={()=>deleteTrip(trip.id)}>Cancel Trip</button>
             </div>
             <div className='flight_cards'>
-                {flights !== [] ? flights.map(flight => <FlightCard key={flight.id} flight={flight} />) : <h4>No Flights Found</h4>}
+                {flights.length > 0 ? flights.map(flight => <FlightCard key={flight.id} flight={flight} btnTxt = {"Cancel Flight"} changeBooking = {cancelFlight} trips = {trip}/>) : <h4>No Flights Found</h4>}
             </div>
         </div>
     )

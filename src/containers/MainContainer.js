@@ -26,7 +26,7 @@ export default class MainContainer extends React.Component {
     render(){
         return(
             <div>
-                <Trips updateMainContTripList={this.updateTripList}/>
+                {localStorage.getItem("token")?<Trips updateMainContTripList={this.updateTripList}/>:null}
                 {/* <SearchForm passSearch={this.passSearch}/> */}
                 {/* {this.state.renderFlights?<FlightsContainer searchRequest={this.state.searchRequest} trips={this.state.tripList}/>:null} */}
             </div>
