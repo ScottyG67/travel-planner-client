@@ -13,7 +13,13 @@ const FlightCard = ({ flight,changeBooking,trips,btnTxt,flightDetails }) => {
         return `${f.itineraries[i].segments[0].departure.iataCode} --> ${f.itineraries[i].segments[f.itineraries[i].segments.length - 1].arrival.iataCode}`
     }
 
-    //potentially make new object to work with and send back for flight details.
+    //potentially make new object to work with and send back for fligt details
+
+    const flightInfo = {
+        id: flight.id,
+        price: flight.price.total,
+        itineraries: flight.itineraries
+    }
     
     const [showTrips,setShowTrips] = useState(false)
 
@@ -58,7 +64,7 @@ const FlightCard = ({ flight,changeBooking,trips,btnTxt,flightDetails }) => {
         <div className="col-sm-12">
             <div className="card" style={{marginTop: ".5rem", color: "black"}}>
                 <div className="card-body">
-                    <h5 className="card-title">{`$${flight.price.total}`} <button onClick={() => flightDetails(flight)} className="btn-sm btn-info">Details</button></h5>
+                    <h5 className="card-title">{`$${flight.price.total}`} <button onClick={() => flightDetails(flightInfo)} className="btn-sm btn-primary">Details</button></h5>
                     <hr />
                     <p className="card-text">{`${flight.itineraries[0].segments[0].departure.iataCode} --> ${flight.itineraries[0].segments[flight.itineraries[0].segments.length - 1].arrival.iataCode}`}</p>
                     {/* <p className="card-text">{flightPath(flight, 0)}</p> */}
