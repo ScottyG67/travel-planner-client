@@ -3,8 +3,9 @@ import React from 'react'
 import Trips from './Trips'
 import FlightsContainer from './FlightsContainer'
 import SearchForm from '../components/SearchForm'
+import { withRouter } from 'react-router'
 
-export default class MainContainer extends React.Component {
+class MainContainer extends React.Component {
     state ={
         renderFlights: false,
         renderHouses: false,
@@ -23,9 +24,17 @@ export default class MainContainer extends React.Component {
         this.setState({tripList:listOfTrips})
     }
 
+    logout = ()=>{
+        localStorage.removeItem("id")
+        localStorage.removeItem("token")
+        this.props.history.push('/login')
+        // debugger
+      }
+
     render(){
         return(
             <div>
+                <button onClick={this.logout}>Logout</button>
                 <Trips updateMainContTripList={this.updateTripList}/>
                 {/* <SearchForm passSearch={this.passSearch}/> */}
                 {/* {this.state.renderFlights?<FlightsContainer searchRequest={this.state.searchRequest} trips={this.state.tripList}/>:null} */}
@@ -34,3 +43,5 @@ export default class MainContainer extends React.Component {
     }
 
 }
+
+export default withRouter(MainContainer)

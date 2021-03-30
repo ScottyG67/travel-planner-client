@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
-import MainContainer from './containers/MainContainer';
+import { BrowserRouter as Router, Redirect, Route, Switch, useHistory } from 'react-router-dom';
+import {withRouter} from 'react-router'
 import './App.css';
+
+import MainContainer from './containers/MainContainer';
+
+// import Login from '../components/Login'
+// import SignUp from '../components/SignUp'
+
 
 import LoginPage from './containers/LoginPage'
 import Main from './containers/Main'
@@ -8,6 +15,8 @@ import Main from './containers/Main'
 function App() {
 
   const [currentUserData, setCurrentUserData] = useState(null)
+
+  let history = useHistory()
 
   const login = (e) => {
 
@@ -55,13 +64,18 @@ function App() {
 
     fetch('http://localhost:3000/api/v1/users', reqObj)
       .then(res => res.json())
-      .then(data => { profileFetch(data) })
+      .then(data => { 
+        profileFetch(data)
+
+      })
     e.target.reset()
   }
 
   // get auth token and user info from server
   const profileFetch = (data) => {
+
     localStorage.setItem("token",data.jwt)
+
     fetch('http://localhost:3000/api/v1/profile', {
       method: "GET",
       headers: {Authorization: `Bearer ${data.jwt}`}
@@ -73,13 +87,37 @@ function App() {
       })
   }
 
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        {currentUserData && !currentUserData.message ? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
-        <MainContainer />
-      </header>
+    <div>
+      
+      <Router>
+        <Switch>
+          <Route exact path='/' >
+            <Main currentUser={currentUserData} />
+          </Route>
+          <Route exact path='/login' >
+            <LoginPage profileFetch={profileFetch} />
+            {/* <LoginPage handleLogin={login} handleSignUp={signup} /> */}
+          </Route>
+          <Route exact path='/trips' >
+            {localStorage.getItem('token')?<MainContainer />:<Redirect to='/login' />}
+          </Route>
+
+
+          <Route>
+            <Redirect to='/' />
+          </Route>
+        </Switch>
+      </Router>
     </div>
+    // <div className="App">
+    //   <header className="App-header">
+    //     {currentUserData && !currentUserData.message ? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
+    //     <MainContainer />
+    //   </header>
+    // </div>
   );
 }
 

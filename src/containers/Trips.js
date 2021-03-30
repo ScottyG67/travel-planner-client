@@ -141,8 +141,12 @@ function Trips({updateMainContTripList}) {
     // change renderList and edit trip to one conditional
     const renderView = (trip) =>{
         if (renderList){
-            // debugger
-            return trips.map( trip => <TripCard key={trip.id} trip={trip} showDetail={showDetail}/>)
+            if(trips.length !== 0) {
+            
+                return trips.map( trip => <TripCard key={trip.id} trip={trip} showDetail={showDetail}/>)
+            } else {
+                return <h1>No Trips</h1>
+            }
         } else {//if (!editTrip){
             return <TripDetails trip={tripDetail} showDetail={showDetail}  deleteTrip = {deleteTrip} saveEdit ={saveEdit} /> //toggleEdit={toggleEdit}/>
         } 

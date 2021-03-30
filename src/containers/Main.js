@@ -17,7 +17,7 @@ const Main = ({ currentUser }) => {
 
     return (
         <div>
-            <h1>{ `Hello, ${currentUser.first_name}!` }</h1>
+            {currentUser?<h1>{ `Hello, ${currentUser.first_name}!` }</h1>:<h1>Welcome!</h1>}
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 prof-column">
