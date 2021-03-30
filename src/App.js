@@ -122,7 +122,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         {loggedIn? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
-        <button onClick={logout}>Logout</button>
+        <button className="btn btn-danger" onClick={logout}>Logout</button>
       </header>
     </div>
   );
