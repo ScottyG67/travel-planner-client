@@ -21,21 +21,21 @@ export default class Flights extends React.Component {
         
     }
 
-    searchFlights = () => {
-        const token = localStorage.getItem('token')
-            fetch("http://localhost:3000/api/v1/search_flights",{
-                method: "POST",
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                }, 
-                body: JSON.stringify({searchTerm: this.props.searchRequest})
-            })
-                .then( resp => resp.json() )
-                .then( resp => this.setState( { flights: resp.data } ) )
-        this.setState({searchRequest: this.props.searchRequest})
-    }
+    // searchFlights = () => {
+    //     const token = localStorage.getItem('token')
+    //         fetch("http://localhost:3000/api/v1/search_flights",{
+    //             method: "POST",
+    //             headers: {
+    //                 Authorization: `Bearer ${token}`,
+    //                 "Content-Type": "application/json",
+    //                 "Accept": "application/json"
+    //             }, 
+    //             body: JSON.stringify({searchTerm: this.props.searchRequest})
+    //         })
+    //             .then( resp => resp.json() )
+    //             .then( resp => this.setState( { flights: resp.data } ) )
+    //     this.setState({searchRequest: this.props.searchRequest})
+    // }
     
     render() {
         return (
