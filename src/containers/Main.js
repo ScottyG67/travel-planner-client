@@ -7,10 +7,10 @@ import FlightSearch from '../components/FlightSearch'
 const Main = ({ currentUser }) => {
 
     const [renderFlights, setRenderFlights] = useState(false)
-    const [renderHouses, setRenderHouses] = useState(false)
     const [searchRequest, setSearchRequest] = useState({})
 
     const passSearch = (dateStart, dateEnd, locStart, locEnd) => {
+        setRenderFlights(false)
         setSearchRequest({startDate: dateStart, endDate: dateEnd, depart: locStart, arrive: locEnd})
         setRenderFlights(true)
     }
