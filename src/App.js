@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import MainContainer from './containers/MainContainer';
 import './App.css';
 
 import LoginPage from './containers/LoginPage'
@@ -69,7 +68,6 @@ function App() {
       .then(profData => {
         setCurrentUserData(profData)
         localStorage.setItem("id",profData["id"])
-        console.log(profData)
       })
   }
 
