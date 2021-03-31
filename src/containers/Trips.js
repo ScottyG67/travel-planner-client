@@ -132,7 +132,11 @@ function Trips() {
             if(trips.length ===0){
                 return <h1>No Trips</h1>
             } else {
-                return trips.map( trip => <TripCard key={trip.id} trip={trip} showDetail={showDetail}/>)
+                return (
+                    <div className="row" style={{ borderColor: "grey", borderStyle: "solid", borderWidth: ".1rem", padding: "1rem", height: "11rem", overflowX: "auto"}}>
+                        {trips.map( trip => <TripCard key={trip.id} trip={trip} showDetail={showDetail}/>)}
+                    </div>
+                )
             }
         } else {
             return <TripDetails trip={tripDetail} showDetail={showDetail}  deleteTrip = {deleteTrip} saveEdit ={saveEdit} /> //toggleEdit={toggleEdit}/>
@@ -144,7 +148,7 @@ function Trips() {
         <div>
             <h1>Your Trips</h1>
             {renderView()}
-            {renderList?<button onClick ={newTrip}>New Trip</button>:null}
+            {renderList?<button className="btn btn-primary" style={{ marginTop: ".5rem" }} onClick={newTrip}>New Trip</button>:null}
         </div>
     )
 
