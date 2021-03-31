@@ -80,3 +80,8 @@
   border-bottom: 1px solid #666666;
   text-align: left;
 }
+
+.image-card-group {
+  margin: 20px;
+  column-count: 2
+}
