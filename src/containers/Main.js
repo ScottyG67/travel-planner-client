@@ -4,6 +4,7 @@ import Trips from './Trips'
 import FlightsContainer from './FlightsContainer'
 import FlightSearch from '../components/FlightSearch'
 import PhotosContainer from './PhotosContiner'
+import DetailCard from '../components/DetailCard'
 import userEvent from '@testing-library/user-event'
 
 const Main = ({ currentUser }) => {
@@ -40,17 +41,21 @@ const Main = ({ currentUser }) => {
                         <Trips />
                     </div>
                 </div>
+                {/* { flightDetails ? <div className="row"> <div className="col-md-12"> <DetailCard flightInfo={flightDetails} changeFlight={setFlightDetails} /></div></div> : null } */}
                 <div className="row">
                     <div className="col-md-6 prof-column">
                         <FlightSearch searchFlights={searchFlights} updateFlights={setFlightsList} />
-                        {flightsList ? <FlightsContainer searchFlights={searchFlights} updateFlights={setFlightsList} flights={flightsList} flightDetails={setFlightDetails} /> : null}
+                        {flightsList ? <FlightsContainer selectedFlight={flightDetails} changeSelectedFlight={setFlightDetails} searchFlights={searchFlights} updateFlights={setFlightsList} flights={flightsList} flightDetails={setFlightDetails} /> : null}
                         {flightsList ? <button onClick={() => setFlightsList(null)} className='btn btn-danger'>Clear Results</button> : null }
                     </div>
                     <div className="col-md-3 prof-column">
                         <PhotosContainer />
                     </div>
+                    {/* { flightDetails ? <DetailCard flightInfo={flightDetails} changeFlight={setFlightDetails} /> : null } */}
                 </div>
+                {/* { flightDetails ? <DetailCard flightInfo={flightDetails} changeFlight={setFlightDetails} /> : null } */}
             </div>
+            {/* { flightDetails ? <DetailCard flightInfo={flightDetails} changeFlight={setFlightDetails} /> : null }   */}
         </div>
     )
 

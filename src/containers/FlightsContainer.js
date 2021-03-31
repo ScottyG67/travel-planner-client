@@ -1,6 +1,7 @@
 import React from 'react'
 
 import FlightCard from '../components/FlightCard'
+import DetailCard from '../components/DetailCard'
 
 export default class Flights extends React.Component {
     
@@ -141,6 +142,7 @@ export default class Flights extends React.Component {
                 <div className="row overflow-auto" style={{marginTop: ".5rem", height: "25rem"}}>
                     {this.props.flights && this.props.flights !== [] ? this.props.flights.map(flight => <FlightCard key={flight.id} flight={flight} btnTxt={"Book Now!"} trips={this.state.trips} changeBooking={this.saveFlight} flightDetails={this.props.flightDetails} />) : null}
                 </div>
+                {this.props.selectedFlight ? <DetailCard flightInfo={this.props.selectedFlight} changeFlight={this.props.changeSelectedFlight} /> : null }
             </div>
         )
     }
