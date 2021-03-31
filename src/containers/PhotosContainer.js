@@ -47,7 +47,6 @@ const PhotosContainer = () => {
 
     return(
         <div>
-            <h1>Photo Feed</h1>
             <PhotoSearch searchImages ={searchImages}/>
             <Group className={'image-card-group'}>
                 {images.length>0? images.map(image => <PhotoCard image ={image} />):null} {/* <PhotoCard image={defltImg}/> */}

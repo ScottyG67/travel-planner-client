@@ -35,10 +35,6 @@ const Main = ({ currentUser }) => {
         // setSearchRequest(obj)
     }
 
-
-
-
-
     return (
         <div>
             <h1>{ `Hello, ${currentUser.first_name}!` }</h1>
