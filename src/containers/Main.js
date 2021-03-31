@@ -4,6 +4,7 @@ import {useState,useEffect} from 'react'
 import Trips from './Trips'
 import FlightsContainer from './FlightsContainer'
 import FlightSearch from '../components/FlightSearch'
+import PhotosContainer from './PhotosContainer'
 import userEvent from '@testing-library/user-event'
 
 const Main = ({ currentUser }) => {
@@ -47,7 +48,6 @@ const Main = ({ currentUser }) => {
                         <Trips />
                     </div>
                 </div>
-                {/* { flightDetails ? <div className="row"> <div className="col-md-12"> <DetailCard flightInfo={flightDetails} changeFlight={setFlightDetails} /></div></div> : null } */}
                 <div className="row">
                     <div className="col-md-6 prof-column">
                         <FlightSearch searchFlights={searchFlights} updateFlights={setFlightsList} />
@@ -57,11 +57,8 @@ const Main = ({ currentUser }) => {
                     <div className="col-md-3 prof-column">
                         <PhotosContainer />
                     </div>
-                    {/* { flightDetails ? <DetailCard flightInfo={flightDetails} changeFlight={setFlightDetails} /> : null } */}
                 </div>
-                {/* { flightDetails ? <DetailCard flightInfo={flightDetails} changeFlight={setFlightDetails} /> : null } */}
             </div>
-            {/* { flightDetails ? <DetailCard flightInfo={flightDetails} changeFlight={setFlightDetails} /> : null }   */}
         </div>
     )
 
