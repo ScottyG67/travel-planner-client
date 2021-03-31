@@ -42,7 +42,7 @@ const Main = ({ currentUser }) => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <Trips />
+                        <Trips change />
                     </div>
                 </div>
                 <div className="row">

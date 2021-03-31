@@ -206,7 +206,7 @@ const TripDetails = ({trip,showDetail,toggleEdit,deleteTrip,saveEdit}) => {
                 <button onClick={()=>deleteTrip(trip.id)}>Cancel Trip</button>
             </div>
             <div className='flight_cards'>
-                {flights.length > 0 ? flights.map(flight => <FlightCard key={flight.id} flight={flight} btnTxt = {"Cancel Flight"} changeBooking = {cancelFlight} trips = {trip}/>) : <h4>No Flights Found</h4>}
+                {flights.length > 0 ? flights.map(flight => <FlightCard key={flight.id} flight={flight} btnTxt = {"Cancel Flight"} changeBooking = {cancelFlight} trips = {trip} />) : <h4>No Flights Found</h4>}
             </div>
         </div>
     )
