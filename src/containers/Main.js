@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
+import {useState,useEffect} from 'react'
 
 import Trips from './Trips'
 import FlightsContainer from './FlightsContainer'
 import FlightSearch from '../components/FlightSearch'
-import PhotosContainer from './PhotosContiner'
-import DetailCard from '../components/DetailCard'
 import userEvent from '@testing-library/user-event'
 
 const Main = ({ currentUser }) => {
 
     // const [searchRequest, setSearchRequest] = useState({})
+    //Flights
     const [flightsList, setFlightsList] = useState(null)
     const [flightDetails, setFlightDetails] = useState(null)
+
+
 
     const searchFlights = (obj, updateFlights) => {
         const reqObj = {
@@ -31,6 +33,10 @@ const Main = ({ currentUser }) => {
             })
         // setSearchRequest(obj)
     }
+
+
+
+
 
     return (
         <div>
