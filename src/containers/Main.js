@@ -5,7 +5,6 @@ import Trips from './Trips'
 import FlightsContainer from './FlightsContainer'
 import PhotosContainer from './PhotosContainer'
 import FlightSearch from '../components/FlightSearch'
-import PhotosContainer from './PhotosContainer'
 import userEvent from '@testing-library/user-event'
 
 const Main = ({ currentUser }) => {
