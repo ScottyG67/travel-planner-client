@@ -48,12 +48,16 @@ const Main = ({ currentUser }) => {
                 <div className="row">
                     <div className="col-md-6 prof-column">
                         <FlightSearch searchFlights={searchFlights} updateFlights={setFlightsList} />
-                        {flightsList ? <FlightsContainer selectedFlight={flightDetails} changeSelectedFlight={setFlightDetails} searchFlights={searchFlights} updateFlights={setFlightsList} flights={flightsList} flightDetails={setFlightDetails} /> : null}
-                        {flightsList ? <button onClick={() => setFlightsList(null)} className='btn btn-danger'>Clear Results</button> : null }
+                        {/* {flightsList ? <FlightsContainer selectedFlight={flightDetails} changeSelectedFlight={setFlightDetails} searchFlights={searchFlights} updateFlights={setFlightsList} flights={flightsList} flightDetails={setFlightDetails} /> : null}
+                        {flightsList ? <button onClick={() => setFlightsList(null)} className='btn btn-danger'>Clear Results</button> : null } */}
                     </div>
                     <div className="col-md-3 prof-column">
                         <PhotosContainer />
                     </div>
+                </div>
+                <div className="row">
+                    {flightsList ? <FlightsContainer selectedFlight={flightDetails} changeSelectedFlight={setFlightDetails} searchFlights={searchFlights} updateFlights={setFlightsList} flights={flightsList} flightDetails={setFlightDetails} /> : null}
+                    {flightsList ? <button onClick={() => setFlightsList(null)} className='btn btn-danger' style={{ width: "50%", marginLeft: "auto", marginRight: "auto", marginTop: ".5rem"}}>Clear Results</button> : null }
                 </div>
             </div>
         </div>

@@ -39,7 +39,7 @@ const DetailCard = ({ flightInfo, changeFlight }) => {
     const inboundArrivalTime = timeConverter(inboundSegments[inboundSegments.length - 1].arrival.at.split("T")[1])
     
     return (
-        <div className="overflow-auto" style={{ color: "black", borderRadius: "5%", backgroundColor: "#e4fbff", position: "absolute", top: "90%", left: "25%", width: "60%", height: "60%", zIndex: "1" }}>
+        <div className="overflow-auto" style={{ color: "black", borderRadius: "5%", backgroundColor: "#e4fbff", position: "absolute", top: "90%", left: "15%", width: "70%", height: "60%", zIndex: "1" }}>
             <div style={{ padding: "2rem" }}>
                 <h1>Outbound Flight Details</h1>
                 <h3>{`${outboundDepartAirport} --> ${outboundArrivalAirport} -- $${flightInfo.price}`}</h3>
