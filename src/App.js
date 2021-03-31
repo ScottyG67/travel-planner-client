@@ -1,6 +1,13 @@
 import React from 'react'
 import { useEffect, useState } from "react"
+import { BrowserRouter as Router, Redirect, Route, Switch, useHistory } from 'react-router-dom';
+import {withRouter} from 'react-router'
 import './App.css';
+
+
+// import Login from '../components/Login'
+// import SignUp from '../components/SignUp'
+
 
 import LoginPage from './containers/LoginPage'
 import Main from './containers/Main'
@@ -35,6 +42,8 @@ function App() {
 
   }, [])
 
+
+  let history = useHistory()
 
   const login = (e) => {
 
@@ -117,13 +126,33 @@ function App() {
     localStorage.removeItem('token')
   }
 
+
   return (
     <div className="App">
       <header className="App-header">
-        {loggedIn? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
-        <button className="btn btn-danger" onClick={logout}>Logout</button>
       </header>
+      
+      <Router>
+        <Switch>
+          <Route exact path='/' >
+            <Main currentUser={currentUserData} />
+          </Route>
+          <Route exact path='/login' >
+            <LoginPage profileFetch={profileFetch} />
+            {/* <LoginPage handleLogin={login} handleSignUp={signup} /> */}
+          </Route>
+          <Route exact path='/trips' >
+            {/* {localStorage.getItem('token')?<MainContainer />:<Redirect to='/login' />} */}
+          </Route>
+
+
+          <Route>
+            <Redirect to='/' />
+          </Route>
+        </Switch>
+      </Router>
     </div>
+
   );
 }
 
