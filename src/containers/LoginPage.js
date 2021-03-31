@@ -7,7 +7,7 @@ import SignUp from '../components/SignUp'
 function LoginPage(props) {
     
     return (
-        <div className="container">
+        <div style={{ marginTop: "6rem" }} className="container">
             <div className="row">
                 <Login handleLogin={props.handleLogin} />
                 <SignUp handleSignUp={props.handleSignUp} />

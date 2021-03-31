@@ -86,3 +86,12 @@
   column-count: 2
 }
 
+.router-option {
+  margin-left: .5rem;
+  margin-right: .5rem;
+  font-size: 20px;
+}
+
+.router-option:hover {
+  color: aliceblue;
+}

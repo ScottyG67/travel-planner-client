@@ -4,6 +4,7 @@ import './App.css';
 
 import LoginPage from './containers/LoginPage'
 import Main from './containers/Main'
+import NavBar from './components/NavBar'
 
 function App() {
 
@@ -120,8 +121,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <NavBar logoutAction={logout} />
         {loggedIn? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
-        <button className="btn btn-danger" onClick={logout}>Logout</button>
+        {/* <button className="btn btn-danger" onClick={logout}>Logout</button> */}
       </header>
     </div>
   );

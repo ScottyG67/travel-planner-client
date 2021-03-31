@@ -6,6 +6,7 @@ import FlightsContainer from './FlightsContainer'
 import PhotosContainer from './PhotosContainer'
 import FlightSearch from '../components/FlightSearch'
 import userEvent from '@testing-library/user-event'
+import NavBar from '../components/NavBar'
 
 const Main = ({ currentUser }) => {
 
@@ -36,7 +37,7 @@ const Main = ({ currentUser }) => {
     }
 
     return (
-        <div>
+        <div style={{ marginTop: "6rem" }}>
             <h1>{ `Hello, ${currentUser.first_name}!` }</h1>
             <div className="container">
                 <div className="row">
