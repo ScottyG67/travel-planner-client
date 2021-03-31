@@ -4,8 +4,6 @@ import {useState,useEffect} from 'react'
 import Trips from './Trips'
 import FlightsContainer from './FlightsContainer'
 import FlightSearch from '../components/FlightSearch'
-import PhotosContainer from './PhotosContainer'
-// import DetailCard from '../components/DetailCard'
 import userEvent from '@testing-library/user-event'
 
 const Main = ({ currentUser }) => {
