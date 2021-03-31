@@ -27,7 +27,7 @@ const FlightSearch = (props) => {
 
     return (
         <div>
-            <h3>Find Your Flight</h3>
+            <h3 style={{ borderBottom: "solid .1rem white" }}>Find Your Flight</h3>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div className="form-group row">
                     <label className="col-sm-2 col-form-label">Flight</label>

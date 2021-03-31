@@ -21,7 +21,7 @@ const PhotoSearch = ({searchImages}) => {
     return(
         <Form onSubmit ={(e)=>handleSubmit(e)}>
             <Form.Group onChange={handleChange}>
-                <Form.Label>Find Cool Images</Form.Label>
+                <Form.Label>See Where You're Going</Form.Label>
                 <Form.Control name="search" type="text" placeholder="Find Cool Images"/>
             </Form.Group>
             <Button variant='primary' type ="submit">Search</Button>
