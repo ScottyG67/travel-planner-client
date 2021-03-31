@@ -62,7 +62,7 @@ const FlightCard = ({ flight,changeBooking,trips,btnTxt,flightDetails }) => {
         <div className="col-sm-12">
             <div className="card" style={{ marginTop: ".25rem", color: "black"}}>
                 <div className="card-body">
-                    <h5 className="card-title">{`Price: $${flight.price.total}`} <button onClick={() => flightDetails(flightInfo)} className="btn-sm btn-primary">Details</button></h5>
+                    <h5 className="card-title">{`Price: $${flight.price.total}`} <button onClick={() => flightDetails(flight)} className="btn-sm btn-primary">Details</button></h5>
                     <hr />
                     <div className="row">
                         <div className="col-md-6" style={{ borderRight: ".1rem solid #31326f"}}>
