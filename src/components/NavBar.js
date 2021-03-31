@@ -8,9 +8,10 @@ const NavBar = ({ logoutAction }) => {
             <div className="container">
                 <div className="col" style={{ width: "80%", display: "inline-block" }}>
                     <h3 style={{ display: "inline-block", marginLeft: ".5rem", marginRight: ".5rem" }}>Trip Viewer</h3>
-                    <a className="router-option" href="">Flights</a>
-                    <a className="router-option" href="">Trips</a>
-                    <a className="router-option" href="">About</a>
+                    <a className="router-option" href="/">Home</a>
+                    <a className="router-option" href="/flights">Flights</a>
+                    <a className="router-option" href="/trips">Trips</a>
+                    <a className="router-option" href="/about">About</a>
                 </div>
                 <div className="col" style={{ width: "10%", display: "inline-block"}}>
                     <button onClick={() => logoutAction()} className="btn-sm btn-danger">Logout</button>

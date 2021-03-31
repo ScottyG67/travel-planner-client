@@ -15,6 +15,16 @@
 
 .App-header {
   background-color: #282c34;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-body {
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -94,4 +104,13 @@
 
 .router-option:hover {
   color: aliceblue;
+}
+
+.flight-page {
+
+}
+
+.about-cards {
+  margin: 20px;
+  column-count: 2
 }

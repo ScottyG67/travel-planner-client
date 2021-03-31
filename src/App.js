@@ -1,10 +1,22 @@
+//React stuff
 import React from 'react'
 import { useEffect, useState } from "react"
+import { 
+  BrowserRouter as Router, 
+  Route, 
+  Redirect,
+  Switch
+} from 'react-router-dom';
+
+//formatting
 import './App.css';
 
+//Components and Containers
 import LoginPage from './containers/LoginPage'
 import Main from './containers/Main'
 import NavBar from './components/NavBar'
+import FlightPage from './containers/FlightPage' 
+import About from './components/About'
 
 function App() {
 
@@ -26,6 +38,7 @@ function App() {
             //login if server response it good
             setCurrentUserData(profData)
             setLoggedIn(true)
+            localStorage.setItem('loggedIn',true)
             localStorage.setItem("id",profData["id"])
           } else {
             //clear data is server response is bad
@@ -103,9 +116,11 @@ function App() {
         if(!profData.message){
           setCurrentUserData(profData)
           setLoggedIn(true)
+          localStorage.setItem('loggedIn',true)
           localStorage.setItem("id",profData["id"])
         } else {
           setLoggedIn(false)
+          localStorage.setItem('loggedIn',false)
           alert('incorrect username or password')
         }
       })
@@ -116,15 +131,45 @@ function App() {
     setLoggedIn(false)
     localStorage.removeItem('id')
     localStorage.removeItem('token')
+    localStorage.removeItem('loggedIn')
   }
 
   return (
     <div className="App">
       <header className="App-header">
         <NavBar logoutAction={logout} />
-        {loggedIn? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
-        {/* <button className="btn btn-danger" onClick={logout}>Logout</button> */}
+        
       </header>
+
+      <div className="App-body">
+      <Router>
+          <Switch>
+            <Route exact path ='/'>
+              {loggedIn? <Main currentUser={currentUserData} />:<Redirect to='/login' />}
+            </Route>
+            <Route path ='/login'>
+              {loggedIn? <Redirect to='/' /> : <LoginPage handleLogin={login} handleSignUp={signup} />}
+            </Route>
+            <Route path ='/signup'>
+              <LoginPage handleLogin={login} handleSignUp={signup} />
+            </Route>
+            <Route path ='/trips'>
+              
+            </Route>
+            <Route path ='/flights'>
+              <div className= 'flight-page' >
+                <FlightPage />
+              </div>
+            </Route>
+            <Route path ='/about'>
+              <About />
+            </Route>
+
+          </Switch>
+        </Router>
+      {/* {loggedIn? <Main currentUser={currentUserData} /> : <LoginPage handleLogin={login} handleSignUp={signup} />} */}
+      </div>
+      
     </div>
   );
 }
